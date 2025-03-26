@@ -12,37 +12,38 @@ public class compactarAnexo {
         linksAnexos.add(new File(diretorioAnexo));
     }
 
+
     public static void compactarAnexos(String diretorioAtual) throws IOException {
+            File anexo1 = linksAnexos.get(0);
+            File anexo2 = linksAnexos.get(1);
 
-        File anexo1 = linksAnexos.get(0);
-        File anexo2 = linksAnexos.get(1);
+            // Bloco de execução para compactar os arquivos
+            try (FileOutputStream fos = new FileOutputStream(diretorioAtual + "/anexos.zip");
+                 ZipOutputStream zos = new ZipOutputStream(fos)) {
 
-        try (FileOutputStream fos = new FileOutputStream(diretorioAtual + "/anexos.zip");
-             ZipOutputStream zos = new ZipOutputStream(fos)) {
-
-            zos.putNextEntry(new ZipEntry("anexo1.pdf"));
-            // Copia o conteúdo do PRIMEIRO arquivo
-            try (FileInputStream fis1 = new FileInputStream(anexo1)) {
-                byte[] buffer = new byte[16384];
-                int length;
-                while ((length = fis1.read(buffer)) > 0) {
-                    zos.write(buffer, 0, length);
+                zos.putNextEntry(new ZipEntry("anexo1.pdf"));
+                // Copia o conteúdo do PRIMEIRO arquivo
+                try (FileInputStream fis1 = new FileInputStream(anexo1)) {
+                    byte[] buffer = new byte[16384];
+                    int length;
+                    while ((length = fis1.read(buffer)) > 0) {
+                        zos.write(buffer, 0, length);
+                    }
                 }
-            }
-            zos.closeEntry();
-            // Copia o conteúdo do SEGUNDO arquivo (em sequência)
-            zos.putNextEntry(new ZipEntry("anexo2.pdf"));
-            try (FileInputStream fis2 = new FileInputStream(anexo2)) {
-                byte[] buffer = new byte[16384];
-                int length;
-                while ((length = fis2.read(buffer)) > 0) {
-                    zos.write(buffer, 0, length);
+                zos.closeEntry();
+                // Copia o conteúdo do SEGUNDO arquivo (em sequência)
+                zos.putNextEntry(new ZipEntry("anexo2.pdf"));
+                try (FileInputStream fis2 = new FileInputStream(anexo2)) {
+                    byte[] buffer = new byte[16384];
+                    int length;
+                    while ((length = fis2.read(buffer)) > 0) {
+                        zos.write(buffer, 0, length);
+                    }
                 }
+                zos.closeEntry();
+            } catch (Exception e) {
+                System.out.println("Falha ao combinar arquivos: " + e.getMessage());
             }
-            zos.closeEntry();
-        } catch (Exception e) {
-            System.out.println("Falha ao combinar arquivos: " + e.getMessage());
-        }
     }
 }
 

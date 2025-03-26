@@ -6,11 +6,11 @@ import java.net.URL;
 public class gerenciadorAnexo {
     protected static String diretorioAtual;
 
+    // Verifica se a pasta em que os arquivos serão baixados já existe
     protected gerenciadorAnexo(String diretorioAtual) {
         gerenciadorAnexo.diretorioAtual = diretorioAtual;
         criarDiretorio();
     }
-
     private void criarDiretorio() {
         File diretorio = new File(diretorioAtual);
         if (!diretorio.exists()) {
@@ -19,12 +19,18 @@ public class gerenciadorAnexo {
     }
 
     protected void baixarAnexos(String linkAnexo, String diretorioAtual) {
+
+        // Resgatar o nome do arquivo e o caminho onde será salvo
         String nomeAnexo = linkAnexo.substring(linkAnexo.lastIndexOf("/") + 1);
         File caminhoAnexo = new File(diretorioAtual + "/" + nomeAnexo);
 
         // Verifica se o arquivo já existe
+        // Caso o(s) arquivo(s) já exista(m), não será(ão) baixado(s) novamente e será(ão) compactado(s) em seguida
         if (caminhoAnexo.exists()) {
+
             System.out.println("Arquivo " + nomeAnexo + " já existe");
+            compactarAnexo.armazenarDiretorio(System.getProperty("user.dir") + "/src/main/java/org/intuitiveCare" + "/webScraping/Anexos/" + nomeAnexo);
+
         } else {
             // Bloco de execução para baixar o anexo
             try (
@@ -48,5 +54,6 @@ public class gerenciadorAnexo {
                 System.out.println("Erro ao baixar o anexo: " + e.getMessage());
             }
         }
+
     }
 }

@@ -25,6 +25,8 @@ public class webScraping {
 
                 String referencia = link.attr("abs:href");
 
+
+                // Filtragem dos arquivos desejados
                 if (referencia.matches(".*\\.pdf$")) {
 
                     // Se o link corresponder com o nome do anexo desejado, será baixado
@@ -39,6 +41,8 @@ public class webScraping {
                     }
                 }
             }
+
+            // Depois dos arquivos serem validados e baixados, serão compactados em um único arquivo
             compactarAnexo.compactarAnexos(diretorioAtual);
 
         } catch (IOException e){
