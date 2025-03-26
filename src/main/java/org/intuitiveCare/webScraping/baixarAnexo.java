@@ -22,23 +22,23 @@ public class baixarAnexo {
 
         // try-with-resources para fechar os recursos automaticamente
         // Criaçao do objeto URL e fluxo de saída para salvar o arquivo na maquina local
-        try(    InputStream inputStream = new URL(anexo).openStream();
+        try(
+                InputStream inputStream = new URL(anexo).openStream();
                 FileOutputStream outputStream =
                         new FileOutputStream(caminhoAnexo);)  {
 
             // Cria um buffer para transferir os dados do arquivo
-            byte[] buffer = new byte[4096];
-            int bytesLidos;
+            byte[] buffer = new byte[16384];
+            long bytesLidos;
 
             // Lê os dados do arquivo remoto e grava no arquivo local
             while ((bytesLidos = inputStream.read(buffer)) != -1) {
-                outputStream.write(buffer, 0, bytesLidos);
+                outputStream.write(buffer, 0, (int) bytesLidos);
             }
             System.out.println("Anexo " + nomeAnexo + " criado com sucesso para " + caminhoAnexo);
 
         } catch (IOException e){
             System.out.println("Erro ao baixar o anexo: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 

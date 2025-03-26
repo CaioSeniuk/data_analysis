@@ -22,20 +22,19 @@ public class webScraping {
                 /*System.out.println(link.attr("href")); testando captura de links*/
                 String referencia = link.attr("abs:href");
 
-                //Condicionais para filtrar os anexos desejados
-                if (referencia.matches(".*\\.pdf$") && referencia.contains("Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf")) {
-                    String anexo1 = link.attr("abs:href");
-                    baixarAnexo anexo = new baixarAnexo(anexo1);
+                if (referencia.matches(".*\\.pdf$")) {
+                    //Condicionais para filtrar os anexos desejados
+                    if (referencia.contains("Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf")) {
+                        new baixarAnexo(link.attr("abs:href"));
 
-                }
-                else if (referencia.matches(".*\\.pdf$") && referencia.contains("Anexo_II_DUT_2021_RN_465.2021_RN628.2025_RN629.2025.pdf")) {
-                    String anexo2 = link.attr("abs:href");
-                    baixarAnexo anexo = new baixarAnexo(anexo2);
+                    } else if (referencia.contains("Anexo_II_DUT_2021_RN_465.2021_RN628.2025_RN629.2025.pdf")) {
+                        new baixarAnexo(link.attr("abs:href"));
+                    }
                 }
             }
 
         } catch (IOException e){
-            System.out.println(e);
+            System.out.println("Erro ao conectar a URL: " + e.getMessage());
         }
         finally {
             System.out.println("Fim da execução");
