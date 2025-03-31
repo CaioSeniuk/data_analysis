@@ -1,0 +1,6 @@
+ALTER TABLE relatorio_cadop
+	ALTER COLUMN ddd TYPE VARCHAR(2),
+	ALTER COLUMN telefone TYPE TEXT,
+	ALTER COLUMN fax TYPE VARCHAR(25),
+	ALTER COLUMN regiao_de_comercializacao TYPE VARCHAR(1);
+
