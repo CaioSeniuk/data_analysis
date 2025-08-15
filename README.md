@@ -22,6 +22,6 @@ Python → Processamento e tratamento dos arquivos CSV.
 
 PostgreSQL → Armazenamento estruturado das informações.
 
-### ** Objetivo**
+### **Objetivo**
 
 Criar um pipeline automatizado para coleta e gerenciamento de dados financeiros, permitindo consultas rápidas, integridade das informações e redução de erros manuais.
