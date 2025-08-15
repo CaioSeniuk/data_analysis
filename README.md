@@ -1,4 +1,4 @@
-📊 Web Scraping & Pipeline de Dados Financeiros
+**#📊 Web Scraping & Pipeline de Dados Financeiros**
 
 Este projeto demonstra um fluxo completo de captura, tratamento e armazenamento de dados financeiros usando Java, Python e Banco de Dados — desde a coleta na web até a persistência organizada dos dados.
 
