@@ -14,7 +14,7 @@
 
 - Criação da estrutura de tabelas e inserção dos dados tratados para consultas e análises futuras.
 
-### *🚀 Tecnologias Utilizadas *
+### **🚀 Tecnologias Utilizadas**
 
 Java → Web scraping e download dos documentos.
 
@@ -22,6 +22,6 @@ Python → Processamento e tratamento dos arquivos CSV.
 
 PostgreSQL → Armazenamento estruturado das informações.
 
-### *💡 Objetivo*
+### ** Objetivo**
 
 Criar um pipeline automatizado para coleta e gerenciamento de dados financeiros, permitindo consultas rápidas, integridade das informações e redução de erros manuais.
