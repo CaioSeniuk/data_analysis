@@ -4,23 +4,15 @@
 
 ### **🔍 Etapas do Projeto**
 
-Web Scraping com Java
+- Web Scraping com Java para acessar e extrair documentos financeiros diretamente de fontes oficiais.
 
-Automação para acessar e extrair documentos financeiros diretamente de fontes oficiais.
+- Download automático dos arquivos CSV.
 
-Download automático dos arquivos CSV.
+- Tratamento de Dados (Limpeza, padronização e validação dos arquivos CSV) com Python
 
-Tratamento de Dados com Python
+- Transformação dos dados para garantir consistência e integridade.
 
-Limpeza, padronização e validação dos arquivos CSV.
-
-Transformação dos dados para garantir consistência e integridade.
-
-Banco de Dados
-
-Criação da estrutura de tabelas.
-
-Inserção dos dados tratados para consultas e análises futuras.
+- Criação da estrutura de tabelas e inserção dos dados tratados para consultas e análises futuras.
 
 ### *🚀 Tecnologias Utilizadas *
 
@@ -28,7 +20,7 @@ Java → Web scraping e download dos documentos.
 
 Python → Processamento e tratamento dos arquivos CSV.
 
-Banco de Dados → Armazenamento estruturado das informações.
+PostgreSQL → Armazenamento estruturado das informações.
 
 ### *💡 Objetivo*
 
