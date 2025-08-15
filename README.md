@@ -22,7 +22,7 @@ Criação da estrutura de tabelas.
 
 Inserção dos dados tratados para consultas e análises futuras.
 
-### **🚀 Tecnologias Utilizadas **
+### *🚀 Tecnologias Utilizadas *
 
 Java → Web scraping e download dos documentos.
 
